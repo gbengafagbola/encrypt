@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+       xmlns:assets="clr-namespace:encrypt.Modules.Assets"
+        xmlns:transactions="clr-namespace:encrypt.Modules.Transactions"
+       Title="encrypt"
+       x:Class="encrypt.AppShell"> 
+
+
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent ContentTemplate="{DataTemplate assets:AssetsView}"
+                      Title="Assets" />
+    </FlyoutItem>
+
+        <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent ContentTemplate="{DataTemplate transactions:TransactionsView}"
+                      Title="Transactions" />
+    </FlyoutItem>
+
+    <MenuItem Text="Logout" Command="{Binding SignOutCommand}" />
+
+</Shell>
+
